@@ -1,0 +1,405 @@
+{
+ "query": "python asyncio event loop",
+ "results": [
+  {
+   "template": "default.html",
+   "title": "Event loop — Python 3.15.2 documentation",
+   "content": "Event loops run asynchronous tasks and callbacks, perform network IO operations, and run subprocesses. Application developers should typically use the high-level asyncio functions, such as asyncio.run(), and should rarely need to reference the ...",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://imgs.search.brave.com/ixP1Yzmb1_Rr2OA6wN7TNe80NRRAmBL8BiAqVS4NjEc/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9kb2Nz/LnB5dGhvbi5vcmcv/My4xNS9faW1hZ2Vz/L3NvY2lhbF9wcmV2/aWV3cy9zdW1tYXJ5/X2xpYnJhcnlfYXN5/bmNpby1ldmVudGxv/b3BfZWNiMjI3MTEu/cG5n",
+   "publishedDate": null,
+   "pubdate": null,
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse",
+    "brave",
+    "duckduckgo"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    1,
+    1,
+    1
+   ],
+   "score": 9.0,
+   "category": "general",
+   "url": "https://docs.python.org/3/library/asyncio-eventloop.html",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "docs.python.org",
+    "/3/library/asyncio-eventloop.html",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "Asyncio Architecture in Python: Event Loops, Tasks, and Futures ...",
+   "content": "Asyncio: Single thread, single process. It uses an event loop to run many tasks concurrently by switching between them when one task is waiting (for example, waiting for network or file I/O). It is best for I/O-bound workloads along with high-concurrency workloads. Memory and overhead Threads: Light, but still need stack memory.",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://imgs.search.brave.com/rnAOo9yf5pihnGcxWC3xXKu9boE5pJ3NsG4aHqdL-a8/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YTIuZGV2LnRvL2R5/bmFtaWMvaW1hZ2Uv/d2lkdGg9MTA4MCxo/ZWlnaHQ9MTA4MCxm/aXQ9Y292ZXIsZ3Jh/dml0eT1hdXRvLGZv/cm1hdD1hdXRvL2h0/dHBzJTNBJTJGJTJG/ZGV2LXRvLXVwbG9h/ZHMuczMuYW1hem9u/YXdzLmNvbSUyRnVw/bG9hZHMlMkZhcnRp/Y2xlcyUyRnZyZHRk/ZHNhMXRvZ3ZjOGFz/eDRnLnBuZw",
+   "publishedDate": "2025-10-17T16:29:57",
+   "pubdate": "2025-10-17 16:29:57",
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse",
+    "brave",
+    "duckduckgo"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    2,
+    2,
+    3
+   ],
+   "score": 4.0,
+   "category": "general",
+   "url": "https://dev.to/imsushant12/asyncio-architecture-in-python-event-loops-tasks-and-futures-explained-4pn3",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "dev.to",
+    "/imsushant12/asyncio-architecture-in-python-event-loops-tasks-and-futures-explained-4pn3",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "Python's asyncio: A Hands-On Walkthrough – Real Python",
+   "content": "Python's asyncio library enables you to write concurrent code using the async and await keywords. The core building blocks of async I/O in Python are awaitable objects—most often coroutines—that an event loop schedules and executes asynchronously. This programming model lets you efficiently manage multiple I/O-bound tasks within a single thread of execution. In this tutorial, you'll ...",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://imgs.search.brave.com/_1Ic6343ABCPxjRTtVPkagMMULmBKAubLZcd3PgcMpo/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9maWxl/cy5yZWFscHl0aG9u/LmNvbS9tZWRpYS9B/LUNvbXBsZXRlLVdh/bGt0aHJvdWdoLW9m/LVB5dGhvbnMtQXN5/bmNpb19XYXRlcm1h/cmtlZC41YjZiOWEw/MWZkYzkuanBn",
+   "publishedDate": "2026-11-09T05:02:26",
+   "pubdate": "2026-11-09 05:02:26",
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse",
+    "brave",
+    "duckduckgo"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    3,
+    3,
+    4
+   ],
+   "score": 2.75,
+   "category": "general",
+   "url": "https://realpython.com/async-io-python/",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "realpython.com",
+    "/async-io-python/",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "Understanding Python’s asyncio: A Deep Dive into the Event Loop ...",
+   "content": "When you define an async function, Python creates a coroutine object. Let’s look at what happens behind the scenes: async def fetch_data(): await asyncio.sleep(1) return \"data\" ... The await keyword is where much of the magic happens. When you await a coroutine: ... Tasks are asyncio’s way of managing coroutines. A Task wraps a coroutine and provides additional functionality: class Task: def __init__(self, coro, loop): self.coro = coro # The wrapped coroutine self._loop = loop # Reference to the event loop self._state = 'PENDING' # Current state self._result = None # Store the result self._exception = None # Store any exception",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://imgs.search.brave.com/SJRB2eJwZY23mBVgmMBkmhwygkMW1YEv-x7h8i6sYa8/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9taXJv/Lm1lZGl1bS5jb20v/MSpBVHpEWXNzbTA2/RjVPTlhsZEV1aU1R/LmpwZWc",
+   "publishedDate": "2024-12-24T00:59:40",
+   "pubdate": "2024-12-24 00:59:40",
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse",
+    "brave"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    4,
+    2
+   ],
+   "score": 1.5,
+   "category": "general",
+   "url": "https://medium.com/delivus/understanding-pythons-asyncio-a-deep-dive-into-the-event-loop-89a6c5acbc84",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "medium.com",
+    "/delivus/understanding-pythons-asyncio-a-deep-dive-into-the-event-loop-89a6c5acbc84",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "How to Build Asyncio Event Loops in Python - OneUptime",
+   "content": "30 Jan 2026 ... At its core, an event loop is a programming construct that waits for and dispatches events. In asyncio, the event loop manages the execution of ...",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://imgs.search.brave.com/lKCF4g-skI8MBG5vljZRpCgMQw_jIghHUAKujjiiAmM/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9vbmV1/cHRpbWUuY29tL2Js/b2cvcG9zdC8yMDI2/LTAxLTMwLWhvdy10/by1idWlsZC1hc3lu/Y2lvLWV2ZW50LWxv/b3BzLWluLXB5dGhv/bi9zb2NpYWwtbWVk/aWEucG5n",
+   "publishedDate": "2026-01-30T00:00:00",
+   "pubdate": "2026-01-30 00:00:00",
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse",
+    "brave"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    7,
+    8
+   ],
+   "score": 0.5357142857142857,
+   "category": "general",
+   "url": "https://oneuptime.com/blog/post/2026-01-30-how-to-build-asyncio-event-loops-in-python/view",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "oneuptime.com",
+    "/blog/post/2026-01-30-how-to-build-asyncio-event-loops-in-python/view",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "I am Raghuveer | Python AsyncIO: Event Loop Internals and Practical ...",
+   "content": "The event loop is a single-threaded scheduler. At its core, it maintains: A ready queue: callbacks scheduled to run immediately · A selector: an OS-level I/O multiplexer (epoll on Linux, kqueue on macOS) A heap of scheduled callbacks: sorted ...",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://imgs.search.brave.com/j5CcuHh-iVeEMudBjzLxJT6pN0nxRo0IXbJ6MVOArNU/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/aWFtcmFnaHV2ZWVy/LmNvbS9hc3NldHMv/aW1nL1JHLnBuZw",
+   "publishedDate": "2026-04-05T00:00:00",
+   "pubdate": "2026-04-05 00:00:00",
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse",
+    "brave"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    6,
+    13
+   ],
+   "score": 0.48717948717948717,
+   "category": "general",
+   "url": "https://www.iamraghuveer.com/posts/python-asyncio-event-loop-internals/",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "www.iamraghuveer.com",
+    "/posts/python-asyncio-event-loop-internals/",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "Asyncio Event Loops Tutorial | TutorialEdge.net",
+   "content": "The alternative way of starting up your event loop is to call the run_forever() method which will subsequently start your asyncio based event loop and have it run indefinitely until the program comes to an end or the stop() method is called.",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://imgs.search.brave.com/Km9tTFn1-yYVugQYdRrX1xnXVDCoZ2u7nAsC_fHx2RQ/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zMy5l/dS13ZXN0LTEuYW1h/em9uYXdzLmNvbS9p/bWFnZXMudHV0b3Jp/YWxlZGdlLm5ldC9j/YXJkcy9kZWZhdWx0/LWNhcmQucG5n",
+   "publishedDate": "2017-10-28T10:50:27",
+   "pubdate": "2017-10-28 10:50:27",
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse",
+    "brave"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    8,
+    14
+   ],
+   "score": 0.39285714285714285,
+   "category": "general",
+   "url": "https://tutorialedge.net/python/concurrency/asyncio-event-loops-tutorial/",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "tutorialedge.net",
+    "/python/concurrency/asyncio-event-loops-tutorial/",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "Event loop — Python 3.15.0rc2 documentation",
+   "content": "Event loops run asynchronous tasks and callbacks, perform network IO operations, and run subprocesses. Application developers should typically use the high-level asyncio functions, such as asyncio.run(), and should rarely need to reference the ...",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://imgs.search.brave.com/ixP1Yzmb1_Rr2OA6wN7TNe80NRRAmBL8BiAqVS4NjEc/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9kb2Nz/LnB5dGhvbi5vcmcv/My4xNS9faW1hZ2Vz/L3NvY2lhbF9wcmV2/aWV3cy9zdW1tYXJ5/X2xpYnJhcnlfYXN5/bmNpby1ldmVudGxv/b3BfZWNiMjI3MTEu/cG5n",
+   "publishedDate": null,
+   "pubdate": null,
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "brave"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    5
+   ],
+   "score": 0.2,
+   "category": "general",
+   "url": "https://docs.python.org/3.15/library/asyncio-eventloop.html",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "docs.python.org",
+    "/3.15/library/asyncio-eventloop.html",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "Asyncio Finally Explained: What the Event Loop Really Does",
+   "content": "3 May 2024 ... Learn how to design great software in 7 steps: https://arjan.codes/designguide. Over the years, I've produced several videos about AsyncIO.",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSY1aAB5oAehJAQzE_VbKsGbOpR6AR1_sOT0_FPNh-41RBU3yuxdCYAGpmX",
+   "publishedDate": null,
+   "pubdate": "",
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    5
+   ],
+   "score": 0.2,
+   "category": "general",
+   "url": "https://www.youtube.com/watch?v=RIVcqT2OGPA",
+   "engine": "google cse",
+   "parsed_url": [
+    "https",
+    "www.youtube.com",
+    "/watch",
+    "",
+    "v=RIVcqT2OGPA",
+    ""
+   ]
+  },
+  {
+   "template": "default.html",
+   "title": "python - What is the pythonic way of running an asyncio event loop ...",
+   "content": "Infinite while True is quite pythonic for asyncio -based scripts. It represents main loop of your program. This decouples script logic from low-level event loop and allows you to control the lifecycle of the program from the point of view of the application logic. Do some periodic actions and checkings. Such loops wrapped in a try-except or finally can be placed in other modules and classes ...",
+   "img_src": "",
+   "iframe_src": "",
+   "audio_src": "",
+   "thumbnail": "",
+   "publishedDate": null,
+   "pubdate": null,
+   "length": null,
+   "views": "",
+   "author": "",
+   "metadata": "",
+   "priority": "",
+   "engines": [
+    "google cse",
+    "brave",
+    "duckduckgo"
+   ],
+   "open_group": false,
+   "close_group": false,
+   "positions": [
+    11,
+    8,
+    7
+   ],
+   "score": 1.0762987012987013,
+   "category": "general",
+   "url": "https://stackoverflow.com/questions/65684730/what-is-the-pythonic-way-of-running-an-asyncio-event-loop-forever",
+   "engine": "brave",
+   "parsed_url": [
+    "https",
+    "stackoverflow.com",
+    "/questions/65684730/what-is-the-pythonic-way-of-running-an-asyncio-event-loop-forever",
+    "",
+    "",
+    ""
+   ]
+  }
+ ],
+ "answers": [],
+ "corrections": [],
+ "infoboxes": [],
+ "suggestions": [
+  "python asyncio loop",
+  "python asyncio run_until_complete",
+  "python asyncio run_in_executor",
+  "python asyncio 详解",
+  "deprecationwarning there is no current event loop loop asyncio get_event_loop ()",
+  "asyncio run_until_complete",
+  "asyncio get running loop",
+  "asyncio event loop explained",
+  "python asyncio stop event loop",
+  "asyncio sleep"
+ ],
+ "unresponsive_engines": []
+}

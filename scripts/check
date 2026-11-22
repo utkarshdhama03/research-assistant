@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+# Lint, format check, type check and tests. Run from the repo root: sh scripts/check
+set -e
+echo "== ruff check";        uv run ruff check .
+echo "== ruff format --check"; uv run ruff format --check .
+echo "== mypy src";          uv run mypy src
+echo "== no network helpers from extraction libraries in src/"
+# trafilatura/htmldate/courlan must only see bytes we fetched ourselves (SSRF-safe fetcher).
+if grep -rnE --include='*.py' "fetch_url|fetch_response|trafilatura\.downloads|htmldate\.utils" src/; then
+    echo "forbidden network helper found in src/ (see above)"; exit 1
+fi
+echo "== pytest";            uv run pytest
+echo "== no raw HTML in the UI (dangerouslySetInnerHTML / innerHTML)"
+if grep -rnE "dangerouslySetInnerHTML|innerHTML" frontend/src frontend/index.html; then
+    echo "raw HTML insertion found in frontend/ (see above); render text through React"; exit 1
+fi
+if [ -d frontend/node_modules ]; then
+    echo "== frontend typecheck"; npm --prefix frontend run --silent typecheck
+    echo "== frontend tests";     npm --prefix frontend test --silent
+else
+    echo "== frontend skipped: no frontend/node_modules (run: npm --prefix frontend ci)"
+fi
+echo "== all checks passed"

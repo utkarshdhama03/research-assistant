@@ -1,0 +1,77 @@
+{
+ "_about": "number_mismatch cases from eval data/evals/quality2-20261121 (2026-11-21): 4 strict rejections of context numbers (should pass with the identifier and question exemptions) and 2 true catches (q13, still rejected). Quotes are the stored evidence (exact chunk text).",
+ "cases": [
+  {
+   "eval_question": "q02-chandrayaan-landing",
+   "question": "Why did Chandrayaan-3's landing succeed when Chandrayaan-2's lander failed?",
+   "sub_question": "What technical differences existed between Chandrayaan-2 and Chandrayaan-3 landers?",
+   "claim": "Chandrayaan-3's lander is equipped with more powerful engines than Chandrayaan-2's lander.",
+   "quote": "The lander of Chandrayaan-3 has been redesigned with several changes to improve its chances of a successful landing. The lander will have a new guidance and navigation system, and it will be equipped with more powerful engines.",
+   "missing_in_quality2": [
+    "2"
+   ],
+   "expected_missing": []
+  },
+  {
+   "eval_question": "q02-chandrayaan-landing",
+   "question": "Why did Chandrayaan-3's landing succeed when Chandrayaan-2's lander failed?",
+   "sub_question": "What technical differences existed between Chandrayaan-2 and Chandrayaan-3 landers?",
+   "claim": "Chandrayaan-3's lander has stronger legs compared to Chandrayaan-2's lander.",
+   "quote": "Major Isro milestone, Chandrayaan-3 integrated with launch vehicle\nVikram will have stronger legs than in its previous avatar to enable withstanding landing at greater velocities than earlier.",
+   "missing_in_quality2": [
+    "2"
+   ],
+   "expected_missing": []
+  },
+  {
+   "eval_question": "q02-chandrayaan-landing",
+   "question": "Why did Chandrayaan-3's landing succeed when Chandrayaan-2's lander failed?",
+   "sub_question": "What lessons were learned from Chandrayaan-2's failure that improved Chandrayaan-3?",
+   "claim": "Chandrayaan-3's lander had stronger legs than Chandrayaan-2's to withstand higher landing velocities.",
+   "quote": "Major Isro milestone, Chandrayaan-3 integrated with launch vehicle\nVikram will have stronger legs than in its previous avatar to enable withstanding landing at greater velocities than earlier.",
+   "missing_in_quality2": [
+    "2"
+   ],
+   "expected_missing": []
+  },
+  {
+   "eval_question": "q07-2008-crisis-housing",
+   "question": "Why did the 2008 financial crisis start in the US housing market?",
+   "sub_question": "How did subprime mortgages contribute to the 2008 financial crisis?",
+   "claim": "The rise in subprime lending and the increase in housing speculation were two proximate causes of the 2008 financial crisis.",
+   "quote": "Two proximate causes were the rise in subprime lending and the increase in housing speculation.",
+   "missing_in_quality2": [
+    "2008"
+   ],
+   "expected_missing": []
+  },
+  {
+   "eval_question": "q13-remote-work-productivity",
+   "question": "What does the evidence say about remote work and productivity?",
+   "sub_question": "What is the relationship between remote work and employee productivity according to recent studies?",
+   "claim": "The IJRTI study finds that most respondents either increased or sustained output at home between 2021 and 2024.",
+   "quote": "Results show that most respondents either increased or sustained output at home, a trend especially pronounced\nin technology, finance and media roles.",
+   "missing_in_quality2": [
+    "2021",
+    "2024"
+   ],
+   "expected_missing": [
+    "2021",
+    "2024"
+   ]
+  },
+  {
+   "eval_question": "q13-remote-work-productivity",
+   "question": "What does the evidence say about remote work and productivity?",
+   "sub_question": "How do different industries compare in terms of remote work productivity?",
+   "claim": "The percentage of remote workers fell slightly in 2022 but remained higher than in 2019 in all industries except agriculture, forestry, fishing, and hunting.",
+   "quote": "remote work participation was still higher than its 2019 level in all industries except agriculture, forestry, fishing, and hunting, which returned to its 2019 level.",
+   "missing_in_quality2": [
+    "2022"
+   ],
+   "expected_missing": [
+    "2022"
+   ]
+  }
+ ]
+}

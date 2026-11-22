@@ -1,0 +1,52 @@
+# Evaluation question set (Phase 6). Categories: technical, science, history-events, india, contested,
+# false-premise. `expectation` describes the desired behaviour where it is not "answer the question".
+questions:
+  - id: q01-pgvector-indexes
+    category: technical
+    question: What are the trade-offs between HNSW and IVFFlat indexes in pgvector?
+  - id: q02-chandrayaan-landing
+    category: india
+    question: Why did Chandrayaan-3's landing succeed when Chandrayaan-2's lander failed?
+  - id: q03-postgres-mvcc
+    category: technical
+    question: How does PostgreSQL's MVCC handle concurrent updates to the same row?
+  - id: q04-monsoon-el-nino
+    category: science
+    question: What drives the Indian summer monsoon, and how is El Niño linked to it?
+  - id: q05-upi-interbank
+    category: india
+    question: How does a UPI payment move money between two different banks?
+  - id: q06-lora-vs-full-finetuning
+    category: technical
+    question: How does LoRA fine-tuning differ from full fine-tuning of large language models?
+  - id: q07-2008-crisis-housing
+    category: history-events
+    question: Why did the 2008 financial crisis start in the US housing market?
+  - id: q08-mrna-vaccines
+    category: science
+    question: How do mRNA vaccines trigger an immune response?
+  - id: q09-intermittent-fasting
+    category: contested
+    question: What do clinical trials show about the health effects of intermittent fasting?
+  - id: q10-jwst-infrared
+    category: science
+    question: Why does the James Webb Space Telescope observe mainly in infrared?
+  - id: q11-balasore-collision
+    category: india
+    question: What caused the June 2023 train collision near Balasore, Odisha?
+  - id: q12-rust-borrow-checker
+    category: technical
+    question: How does Rust's borrow checker prevent data races?
+  - id: q13-remote-work-productivity
+    category: contested
+    question: What does the evidence say about remote work and productivity?
+  - id: q14-gst-india
+    category: india
+    question: How did GST change indirect taxation in India compared with the earlier system?
+  - id: q15-titan-submersible
+    category: history-events
+    question: What happened to the Titan submersible in June 2023, and why?
+  - id: q16-eiffel-tower-lyon
+    category: false-premise
+    question: Why was the Eiffel Tower moved to Lyon in 1999?
+    expectation: The Eiffel Tower was never moved. No supported claim and no report sentence may say it was moved to Lyon.

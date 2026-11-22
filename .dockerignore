@@ -1,0 +1,20 @@
+# Only what the image build needs: no secrets, no local data, no build output, no VCS.
+.env
+.env.*
+!.env.example
+data/
+.git/
+.gitignore
+.venv/
+**/__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+.vscode/
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+tests/
+images/
+scripts/

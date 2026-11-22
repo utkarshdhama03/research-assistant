@@ -1,0 +1,116 @@
+name: research-assistant
+
+# Everything is configured in .env (copy .env.example). No secret is baked into an image.
+# Ollama is not a service here: it runs natively on the host (GPU), reached at host.docker.internal.
+
+x-app: &app
+  build: .
+  image: research-assistant:1.1.0
+  env_file: .env
+  environment: &app-env
+    # Inside the compose network; .env's DATABASE_URL, SEARXNG_URL and OLLAMA_URL are for running on the host.
+    DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-research}:${POSTGRES_PASSWORD:-research}@postgres:5432/${POSTGRES_DB:-research}
+    SEARXNG_URL: http://searxng:8080
+    OLLAMA_URL: ${OLLAMA_URL_DOCKER:-http://host.docker.internal:11434}
+    API_PORT: ${API_PORT:-8000}
+    # Login is on in Docker unless .env says AUTH_ENABLED=false (then the API refuses to start, since it
+    # listens on 0.0.0.0 inside the container).
+    AUTH_ENABLED: ${AUTH_ENABLED:-true}
+  extra_hosts:
+    - "host.docker.internal:host-gateway"  # Linux; Docker Desktop defines it already
+  init: true
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.7-pg17@sha256:b513c48566e4777cd3370451400000c78eda6a08131d68f4c31d4a76f27bd8fd
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-research}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-research}
+      POSTGRES_DB: ${POSTGRES_DB:-research}
+      POSTGRES_TEST_DB: ${POSTGRES_TEST_DB:-research_test}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5434}:5432"  # for running the app and tests on the host
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/postgres/init-test-db.sh:/docker-entrypoint-initdb.d/10-init-test-db.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  searxng:
+    image: searxng/searxng:2026.11.15-2d500cb6b@sha256:932f69dca010db9880bddebb2171f05d8e1a25d04a59149ff65409993d680024
+    environment:
+      SEARXNG_SECRET: ${SEARXNG_SECRET:?set SEARXNG_SECRET in .env}
+      SEARXNG_CONTACT_URL: ${CONTACT_URL:?set CONTACT_URL in .env}
+      SEARXNG_BASE_URL: http://localhost:${SEARXNG_PORT:-8888}/
+    ports:
+      - "127.0.0.1:${SEARXNG_PORT:-8888}:8080"  # for running the app on the host
+    volumes:
+      - ./searxng/settings.yml:/etc/searxng/settings.yml:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:8080/healthz || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # One-shot: bring the schema up to date, then exit. api and worker start only after it succeeded.
+  migrate:
+    <<: *app
+    command: ["alembic", "upgrade", "head"]
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    <<: *app
+    command: ["ra", "serve"]
+    environment:
+      <<: *app-env
+      API_HOST: 0.0.0.0  # inside the container; published on 127.0.0.1 only (below)
+    ports:
+      - "127.0.0.1:${API_PORT:-8000}:${API_PORT:-8000}"
+    healthcheck:
+      test: ["CMD", "ra", "healthcheck", "api"]
+      interval: 15s
+      timeout: 10s
+      start_period: 20s
+      retries: 3
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      searxng:
+        condition: service_healthy
+
+  worker:
+    <<: *app
+    command: ["ra", "worker"]
+    healthcheck:
+      test: ["CMD", "ra", "healthcheck", "worker"]
+      interval: 15s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+    # On stop the worker finishes its current step (an LLM call can take up to LLM_TIMEOUT_S) and marks
+    # the run failed "worker stopped"; after this grace period Docker kills it.
+    stop_grace_period: 150s
+    restart: unless-stopped
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      searxng:
+        condition: service_healthy
+
+volumes:
+  pgdata:

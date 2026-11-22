@@ -1,0 +1,190 @@
+{
+ "_about": "Every written sentence of the q16 run in eval data/evals/quality2-20261121 (2026-11-21) with the exact claims it cited (section_citations), and what the sentence content check flags. 'The structure was designed...' is a false positive kept on purpose (a referring word not in the claim).",
+ "cases": [
+  {
+   "sentence": "The Eiffel Tower in Lyon is referred to as Lyon’s 'little Eiffel Tower'.",
+   "claims": [
+    "The Eiffel Tower in Lyon is referred to as Lyon’s 'little Eiffel Tower'."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "It was built on a section of the Gay family's property.",
+   "claims": [
+    "The Eiffel Tower in Lyon was built on a section of the Gay family's property."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The structure was designed to be the highest point in the city.",
+   "claims": [
+    "The Eiffel Tower in Lyon was designed to be the highest point in the city."
+   ],
+   "replace": true,
+   "unmatched_words": [
+    "structur"
+   ],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The tower was closed to the public in 1953.",
+   "claims": [
+    "The Eiffel Tower in Lyon was closed to the public in 1953."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "In 1999, the Eiffel Tower in Lyon was bought by RTF, the national society of French radio and television, for 15 million francs.",
+   "claims": [
+    "The Eiffel Tower in Lyon was bought by RTF, the national society of French radio and television, for 15 million francs."
+   ],
+   "replace": true,
+   "unmatched_words": [],
+   "unmatched_numbers": [
+    "1999"
+   ]
+  },
+  {
+   "sentence": "On 31 December 1999, flashing lights and high-powered searchlights were installed on the Eiffel Tower in Lyon for the 'Countdown to the Year 2000' celebration.",
+   "claims": [
+    "On 31 December 1999, flashing lights and high-powered searchlights were installed on the Eiffel Tower in Lyon for the 'Countdown to the Year 2000' celebration."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The Eiffel Tower in Lyon was built as a republican, nonreligious counterpart to the Basilica of Fourvière.",
+   "claims": [
+    "The Eiffel Tower in Lyon was built as a republican, nonreligious counterpart to the Basilica of Fourvière."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "It was originally owned by the Société Anonyme de la Tour de Fourvière.",
+   "claims": [
+    "The Eiffel Tower in Lyon was originally owned by the Société Anonyme de la Tour de Fourvière."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The tower was converted into a radio and television antenna in 1953.",
+   "claims": [
+    "The Eiffel Tower in Lyon was converted into a radio and television antenna in 1953."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The Eiffel Tower in Lyon was used as a backdrop for the July 14 fireworks in Lyon.",
+   "claims": [
+    "The Eiffel Tower in Lyon was used as a backdrop for the July 14 fireworks in Lyon."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The Eiffel Tower in Lyon was constructed as part of an international exposition in the late 19th century.",
+   "claims": [
+    "The Eiffel Tower in Lyon was constructed as part of an international exposition in the late 19th century."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "This event, known as the Exposition Universelle, was a significant global gathering that showcased technological and cultural advancements.",
+   "claims": [
+    "The Eiffel Tower in Lyon was constructed as part of an international exposition in the late 19th century."
+   ],
+   "replace": true,
+   "unmatched_words": [
+    "event",
+    "known",
+    "universell",
+    "significant",
+    "global",
+    "gather",
+    "showcas",
+    "technological",
+    "cultural",
+    "advancement"
+   ],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The Eiffel Tower in Lyon was once one of the most popular attractions in Lyon.",
+   "claims": [
+    "The Eiffel Tower in Lyon was once one of the most popular attractions in Lyon."
+   ],
+   "replace": false,
+   "unmatched_words": [],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The structure served as a symbol of innovation and engineering during that time.",
+   "claims": [
+    "The Eiffel Tower in Lyon was constructed as part of an international exposition in the late 19th century."
+   ],
+   "replace": true,
+   "unmatched_words": [
+    "structur",
+    "serv",
+    "symbol",
+    "innovation",
+    "engineer",
+    "tim"
+   ],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The tower remained a prominent landmark in Lyon for over a century.",
+   "claims": [
+    "The Eiffel Tower in Lyon was once one of the most popular attractions in Lyon."
+   ],
+   "replace": true,
+   "unmatched_words": [
+    "remain",
+    "prominent",
+    "landmark",
+    "century"
+   ],
+   "unmatched_numbers": []
+  },
+  {
+   "sentence": "The event in Lyon in 1999 that featured the Eiffel Tower was part of a broader cultural initiative to celebrate the city's historical and architectural heritage.",
+   "claims": [
+    "The Eiffel Tower in Lyon was once one of the most popular attractions in Lyon."
+   ],
+   "replace": true,
+   "unmatched_words": [
+    "event",
+    "featur",
+    "part",
+    "broader",
+    "cultural",
+    "initiativ",
+    "celebrat",
+    "city",
+    "historical",
+    "architectural",
+    "heritag"
+   ],
+   "unmatched_numbers": [
+    "1999"
+   ]
+  }
+ ]
+}

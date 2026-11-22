@@ -1,0 +1,60 @@
+#!/usr/bin/env sh
+# Restore a backup made by scripts/backup. Replaces the tables in the target database.
+# Usage, from the repo root: sh scripts/restore data/backups/<file>.dump [--db NAME] [--yes]
+#   --db NAME  restore into NAME instead of POSTGRES_DB (created if missing), e.g. to inspect a backup
+#   --yes      do not ask for confirmation
+# Stop the app first when restoring the main database: docker compose stop api worker
+set -eu
+cd "$(dirname "$0")/.."
+
+env_value() {
+    v=""
+    [ -f .env ] && v=$(grep -E "^$1=" .env | tail -n 1 | cut -d= -f2- | tr -d '\r')
+    printf '%s' "${v:-$2}"
+}
+
+PGUSER=$(env_value POSTGRES_USER research)
+MAIN_DB=$(env_value POSTGRES_DB research)
+DB="$MAIN_DB"
+FILE=""
+YES=0
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --db) DB="$2"; shift 2 ;;
+        --yes) YES=1; shift ;;
+        -h|--help) sed -n '2,7p' "$0"; exit 0 ;;
+        -*) echo "unknown option: $1" >&2; exit 2 ;;
+        *) FILE="$1"; shift ;;
+    esac
+done
+case "$DB" in
+    ""|*[!A-Za-z0-9_]*) echo "database name must be letters, digits and _ only: $DB" >&2; exit 2 ;;
+esac
+if [ -z "$FILE" ] || [ ! -f "$FILE" ]; then
+    echo "usage: sh scripts/restore <backup file> [--db NAME] [--yes]" >&2
+    exit 2
+fi
+
+if [ "$DB" = "$MAIN_DB" ]; then
+    running=$(docker compose ps --status running --services 2>/dev/null | grep -E '^(api|worker)$' || true)
+    if [ -n "$running" ]; then
+        echo "the app is running ($(echo "$running" | tr '\n' ' ')); stop it first: docker compose stop api worker" >&2
+        exit 1
+    fi
+fi
+if [ "$YES" -ne 1 ]; then
+    printf 'This replaces the tables in database "%s" with %s.\nType the database name to continue: ' "$DB" "$FILE"
+    read -r answer
+    [ "$answer" = "$DB" ] || { echo "cancelled"; exit 1; }
+fi
+
+exists=$(docker compose exec -T postgres psql -U "$PGUSER" -d postgres -tAc \
+    "SELECT 1 FROM pg_database WHERE datname = '$DB'" | tr -d '\r')
+if [ "$exists" != "1" ]; then
+    echo "creating database $DB"
+    docker compose exec -T postgres createdb -U "$PGUSER" "$DB"
+fi
+echo "restoring $FILE into $DB"
+docker compose exec -T postgres pg_restore -U "$PGUSER" -d "$DB" --clean --if-exists --no-owner \
+    --exit-on-error < "$FILE"
+echo "done. Start the app again with: docker compose up -d"

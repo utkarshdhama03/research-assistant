@@ -1,0 +1,20 @@
+# Minimal overrides on top of SearXNG defaults.
+# secret_key is supplied via the SEARXNG_SECRET environment variable.
+use_default_settings:
+  engines:
+    # Not needed for web research; torch and ahmia are Tor-only engines.
+    remove:
+      - wikidata
+      - openstreetmap
+      - torch
+      - ahmia
+
+server:
+  limiter: false
+  image_proxy: false
+
+search:
+  safe_search: 0
+  formats:
+    - html
+    - json

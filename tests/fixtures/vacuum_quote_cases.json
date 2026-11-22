@@ -1,0 +1,119 @@
+{
+ "_about": "Quote-location cases from live runs bf0e907b and dfc3f59e (2026-11-19/21): every claim the verifier called supported whose quote was not found. Excerpts are exact substrings of the stored chunks.",
+ "excerpts": {
+  "list": {
+   "url": "https://oneuptime.com/blog/post/2026-01-21-postgresql-vacuum-autovacuum/view",
+   "text": "Concurrency Control (MVCC):\n- UPDATE creates a new row version, old version becomes \"dead\"\n- DELETE marks rows as dead but doesn't remove them\n- Dead rows (\"dead tuples\") accumulate and waste space\nVACUUM:\n- Removes dead tuples\n- Updates visibility map\n- Updates table metadata (and planner statistics when run with ANALYZE)\n- Prevents transaction ID wraparound\nTypes of VACUUM"
+  },
+  "typo": {
+   "url": "https://www.geeksforgeeks.org/postgresql/what-is-vacuum-in-postgresql/",
+   "text": "It only free up the disck space for PostgreSQL and does not reclain the space for OS.\nSyntax:\nVACUUM table_name;\n2. VACUUM FULL\nThis type of vacuuming rewrites the entire table which compact it and recalims the disk space for OS. It frees up more space, it is more resource-intensive and locks the dable during the execution which makes unstable for other options.\nSyntax:\nVACUUM FULL table_name;"
+  }
+ },
+ "cases": [
+  {
+   "run": "bf0e907b",
+   "claim_ordinal": 2,
+   "claim": "VACUUM removes dead tuples from tables.",
+   "model_quote": "VACUUM: Removes dead tuples",
+   "excerpt": "list",
+   "expected_method": "list"
+  },
+  {
+   "run": "bf0e907b",
+   "claim_ordinal": 3,
+   "claim": "VACUUM updates the visibility map of tables.",
+   "model_quote": "VACUUM: Removes dead tuples, Updates visibility map, Updates table metadata (and planner statistics when run with ANALYZE)",
+   "excerpt": "list",
+   "expected_method": "list"
+  },
+  {
+   "run": "bf0e907b",
+   "claim_ordinal": 4,
+   "claim": "VACUUM prevents transaction ID wraparound in PostgreSQL.",
+   "model_quote": "VACUUM: Prevents transaction ID wraparound",
+   "excerpt": "list",
+   "expected_method": null
+  },
+  {
+   "run": "bf0e907b",
+   "claim_ordinal": 6,
+   "claim": "VACUUM removes dead tuples from tables in PostgreSQL.",
+   "model_quote": "VACUUM: Removes dead tuples",
+   "excerpt": "list",
+   "expected_method": "list"
+  },
+  {
+   "run": "bf0e907b",
+   "claim_ordinal": 15,
+   "claim": "VACUUM FULL reclaims disk space for the operating system, making the space available for other processes.",
+   "model_quote": "This type of vacuuming rewrites the entire table which compact it and reclaims the disk space for OS.",
+   "excerpt": "typo",
+   "expected_method": "fuzzy"
+  },
+  {
+   "run": "dfc3f59e",
+   "claim_ordinal": 2,
+   "claim": "VACUUM removes dead tuples from tables.",
+   "model_quote": "VACUUM: Removes dead tuples",
+   "excerpt": "list",
+   "expected_method": "list"
+  },
+  {
+   "run": "dfc3f59e",
+   "claim_ordinal": 3,
+   "claim": "VACUUM updates the visibility map of tables.",
+   "model_quote": "VACUUM: Removes dead tuples, Updates visibility map, Updates table metadata (and planner statistics when run with ANALYZE)",
+   "excerpt": "list",
+   "expected_method": "list"
+  },
+  {
+   "run": "dfc3f59e",
+   "claim_ordinal": 4,
+   "claim": "VACUUM prevents transaction ID wraparound in PostgreSQL.",
+   "model_quote": "VACUUM: Prevents transaction ID wraparound",
+   "excerpt": "list",
+   "expected_method": null
+  },
+  {
+   "run": "dfc3f59e",
+   "claim_ordinal": 6,
+   "claim": "VACUUM in PostgreSQL removes dead tuples.",
+   "model_quote": "VACUUM: Removes dead tuples",
+   "excerpt": "list",
+   "expected_method": "list"
+  },
+  {
+   "run": "dfc3f59e",
+   "claim_ordinal": 7,
+   "claim": "VACUUM in PostgreSQL updates the visibility map.",
+   "model_quote": "VACUUM: Removes dead tuples, Updates visibility map, Updates table metadata (and planner statistics when run with ANALYZE)",
+   "excerpt": "list",
+   "expected_method": "list"
+  },
+  {
+   "run": "dfc3f59e",
+   "claim_ordinal": 8,
+   "claim": "VACUUM in PostgreSQL updates table metadata and planner statistics when run with ANALYZE.",
+   "model_quote": "VACUUM: Removes dead tuples, Updates visibility map, Updates table metadata (and planner statistics when run with ANALYZE)",
+   "excerpt": "list",
+   "expected_method": "list"
+  },
+  {
+   "run": "dfc3f59e",
+   "claim_ordinal": 9,
+   "claim": "VACUUM in PostgreSQL prevents transaction ID wraparound.",
+   "model_quote": "VACUUM: Removes dead tuples, updates visibility map, updates table metadata (and planner statistics when run with ANALYZE), Prevents transaction ID wraparound",
+   "excerpt": "list",
+   "expected_method": "fuzzy"
+  },
+  {
+   "run": "dfc3f59e",
+   "claim_ordinal": 15,
+   "claim": "VACUUM FULL reclaims disk space for the operating system, making the space available for other processes.",
+   "model_quote": "This type of vacuuming rewrites the entire table which compact it and reclaims the disk space for OS.",
+   "excerpt": "typo",
+   "expected_method": "fuzzy"
+  }
+ ]
+}
